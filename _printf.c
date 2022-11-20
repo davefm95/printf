@@ -9,8 +9,7 @@
 int _printf(const char *format, ...)
 {
 	va_list p;
-	char form_spec[] = {'%', 'c', 's'};
-	int i = 0, conv_charswitch = 0, spec_arr_size = 3, j;
+	int i = 0, conv_charswitch = 0;
 	va_start(p, format);
 
 	while (format && format[i])

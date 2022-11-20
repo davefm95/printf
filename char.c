@@ -2,8 +2,9 @@
 /**
  *char_func - prints char types in format string
  *@c: char to be printed
- */
-void char_func(char c)
+ *Return: num of bytes printed
+*/
+int char_func(char c)
 {
-	write(1, &c, 1);
+	return (write(1, &c, 1));
 }

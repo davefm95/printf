@@ -2,8 +2,9 @@
 /**
  *string_func - prints a string specified in format string
  *@s: string to be printed
+ *Return: num of bytes printed
  */
-void string_func(char *s)
+int string_func(char *s)
 {
 	int stlen = 0;
 
@@ -11,6 +12,7 @@ void string_func(char *s)
 	{
 		while (s[stlen])
 			stlen++;
-		write(1, s, stlen);
+		return (write(1, s, stlen));
 	}
+	return (0);
 }

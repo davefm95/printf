@@ -9,7 +9,7 @@
 int _printf(const char *format, ...)
 {
 	va_list p;
-	int i = 0, conv_charswitch = 0;
+	int i = 0, conv_charswitch = 0, no_bytes = 0;
 
 	va_start(p, format);
 	while (format && format[i])
@@ -19,27 +19,30 @@ int _printf(const char *format, ...)
 			switch (format[i])
 			{
 			case '%':
-				write(1, &format[i], 1), conv_charswitch--;
+				no_bytes += write(1, &format[i], 1), conv_charswitch--;
 				break;
 			case 'c':
-				char_func(va_arg(p, int)), conv_charswitch--;
+				no_bytes += char_func(va_arg(p, int)), conv_charswitch--;
 				break;
 			case 's':
-				string_func(va_arg(p, char *)), conv_charswitch--;
+				no_bytes += string_func(va_arg(p, char *)), conv_charswitch--;
 				break;
 			default:
-				write(1, &format[i - 1], 1);
-				write(1, &format[i], 1), conv_charswitch--;
+				no_bytes += write(1, &format[i - 1], 1);
+				no_bytes += write(1, &format[i], 1), conv_charswitch--;
 			}
 			i++;
 			continue;
 		}
 		if (format[i] != '%')
+		{
 			write(1, &format[i], 1);
+			no_bytes +=1;
+		}
 		else
 			conv_charswitch++;
 		i++;
 	}
 	va_end(p);
-	return (0);
+	return (no_bytes);
 }

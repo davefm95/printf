@@ -1,7 +1,7 @@
 #include <unistd.h>
 /**
  *string_func - prints a string specified in format string
- *s: string to be printed
+ *@s: string to be printed
  */
 void string_func(char *s)
 {

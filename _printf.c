@@ -10,8 +10,8 @@ int _printf(const char *format, ...)
 {
 	va_list p;
 	int i = 0, conv_charswitch = 0;
-	va_start(p, format);
 
+	va_start(p, format);
 	while (format && format[i])
 	{
 		if (conv_charswitch == 1)

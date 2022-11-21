@@ -7,13 +7,9 @@
  */
 int int_func(int num)
 {
-	int n, rem, numpow = 1, bytes_prntd = 0;
+	int n, numpow = 1, bytes_prntd = 0;
 	char write_char;
 
-
-	n = num / 10;
-	rem = n % 10;
-	num = (n * 10) + rem;
 	n = num;
 	if (num <= INT_MAX && num >= INT_MIN)
 	{
@@ -26,7 +22,7 @@ int int_func(int num)
 		{
 			write_char = '2';
 			bytes_prntd = write(1, &write_char, 1);
-			num %= 1000000000;
+			num = num % 1000000000;
 		}
 		for (; n >= 10; n /= 10)
 			numpow *= 10;

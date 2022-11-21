@@ -6,5 +6,6 @@
 */
 int char_func(char c)
 {
-	return (write(1, &c, 1));
+	if (c > 0)
+		return (write(1, &c, 1));
 }

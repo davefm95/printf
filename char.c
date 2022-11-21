@@ -8,4 +8,5 @@ int char_func(char c)
 {
 	if (c > 0)
 		return (write(1, &c, 1));
+	return (0);
 }

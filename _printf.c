@@ -10,7 +10,7 @@ int _printf(const char *format, ...)
 {
 	va_list p;
 	int i = 0, conv_charswitch = 0, no_bytes = 0;
-	char *str;
+	char *st;
 
 	va_start(p, format);
 	while (format && format[i])

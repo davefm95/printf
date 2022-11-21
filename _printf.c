@@ -37,7 +37,7 @@ int _printf(const char *format, ...)
 		if (format[i] != '%')
 		{
 			write(1, &format[i], 1);
-			no_bytes +=1;
+			no_bytes += 1;
 		}
 		else
 			conv_charswitch++;

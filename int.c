@@ -14,8 +14,8 @@ int int_func(int num)
 	n = num / 10;
 	rem = n % 10;
 	num = (n * 10) + rem;
-	n = num;;
-	if (num <= INT_MAX && num >= INT_MAX)
+	n = num;
+	if (num <= INT_MAX && num >= INT_MIN)
 	{
 		if (num < 0)
 		{

@@ -10,6 +10,7 @@ int _printf(const char *format, ...)
 {
 	va_list p;
 	int i = 0, conv_charswitch = 0, no_bytes = 0;
+	char *str;
 
 	va_start(p, format);
 	while (format && format[i])
@@ -25,7 +26,8 @@ int _printf(const char *format, ...)
 				no_bytes += char_func(va_arg(p, int)), conv_charswitch--;
 				break;
 			case 's':
-				no_bytes += string_func(va_arg(p, char *)), conv_charswitch--;
+				st = va_arg(p, char *);
+				no_bytes += string_func(st), conv_charswitch--;
 				break;
 			default:
 				no_bytes += write(1, &format[i - 1], 1);

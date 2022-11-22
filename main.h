@@ -4,6 +4,7 @@
 #include <stdio.h>
 
 #define BUFF_SIZE 1024
+#define UNUSED(x)
 
 /* FLAGS */
 #define F_MINUS 1

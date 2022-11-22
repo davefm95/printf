@@ -29,13 +29,6 @@ int _printf(const char *format, ...)
 				st = va_arg(p, char *);
 				no_bytes += string_func(st), conv_charswitch--;
 				break;
-			case 'd':
-			case 'i':
-				no_bytes += int_func(va_arg(p, int)), conv_charswitch--;
-				break;
-			default:
-				no_bytes += write(1, &format[i - 1], 1);
-				no_bytes += write(1, &format[i], 1), conv_charswitch--;
 			}
 			i++;
 			continue;

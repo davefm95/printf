@@ -7,7 +7,7 @@
 int int_func(va_list p)
 {
 	char buffer[BUFF_SIZE];
-	int i = BUFF_SIZE - 1, length = 0, num = va_arg(p, long int), int s = 0;
+	int i = BUFF_SIZE - 1, length = 0, num = va_arg(p, long int), s = 0;
 
 	buffer[i] = '\0';
 	if (num < 0)

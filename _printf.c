@@ -25,7 +25,7 @@ int _printf(const char *format, ...)
 		if (format[i] == '%' && format[i + 1] != '\0')
 			conv_charswitch++;
 		else if (format[i + 1] == '\0')
-			return (bytes_prntd);
+			return (-1);
 	}
 	return (bytes_prntd);
 }

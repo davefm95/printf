@@ -22,7 +22,7 @@ int _printf(const char *format, ...)
 		}
 		if (format[i] != '%')
 			bytes_prntd += write(1, &format[i], 1);
-		else if (format[i + 1] != '\0')
+		if (format[i] == '%' && format[i + 1] != '\0')
 			conv_charswitch++;
 		else
 			return (bytes_prntd);

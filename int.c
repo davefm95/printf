@@ -1,8 +1,13 @@
 #include "main.h"
+/**
+ *int_func - deals with printing integers
+ *@p: pointer
+ *Return: bytes printed
+ */
 int int_func(va_list p)
 {
 	char buffer[BUFF_SIZE];
-	int i = BUFF_SIZE - 1, length = 0, num = va_arg(p, long int);;
+	int i = BUFF_SIZE - 1, length = 0, num = va_arg(p, long int);
 
 	buffer[i] = '\0';
 	while (num != 0)

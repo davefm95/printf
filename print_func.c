@@ -1,4 +1,10 @@
 #include "main.h"
+/**
+ *print_func - handles the selection of appropriate function
+ *@c: character of the format specifier
+ *@p: a va_list pointer
+ *Return: bytes printed
+ */
 int print_func(char c, va_list p)
 {
 	int i, bytes_prntd = 0;

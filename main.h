@@ -4,11 +4,16 @@
 #include <unistd.h>
 #include <stdlib.h>
 #define BUFF_SIZE 1024
+/**
+ *struct charfunc - character and function struct
+ *@c: char variable
+ *@pr: pointer to func
+ */
 typedef struct charfunc
 {
 	char c;
 	int (*pr)(va_list p);
-}print_f;
+} print_f;
 int _printf(const char *format, ...);
 int print_func(char c, va_list p);
 int char_func(va_list p);

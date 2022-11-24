@@ -1,8 +1,8 @@
 #include "main.h"
 /**
- *int_func - deals with printing integers
- *@p: pointer
- *Return: bytes printed
+ *int_func - function for  integers
+ *@p: pointer variable
+ *Return: return bytes printed
  */
 int int_func(va_list p)
 {
